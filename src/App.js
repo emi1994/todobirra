@@ -1,10 +1,10 @@
-import logo from './logo.svg'
 import './App.css'
+import NavBarMenu from './Components/Navbar/Navbar'
 
 function App() {
   return (
     <>
-      <h1>Bienvenido a Todo Birra</h1>
+      <NavBarMenu />
     </>
   )
 }
