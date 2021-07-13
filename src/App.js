@@ -1,10 +1,12 @@
 import './App.css'
-import NavBarMenu from './Components/Navbar/Navbar'
+import Navigation from './Components/Navbar/Navbar'
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
     <>
-      <NavBarMenu />
+      <Navigation />
+      <ItemListContainer />
     </>
   )
 }

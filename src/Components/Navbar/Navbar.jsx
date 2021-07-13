@@ -1,17 +1,10 @@
 import React from 'react'
-import {
-  Navbar,
-  Container,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-} from 'react-bootstrap'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { Navbar, Container, Nav, Form, FormControl } from 'react-bootstrap'
 import { AiOutlineUser } from 'react-icons/ai'
 import './Navbar.css'
+import CartWidget from '../CartWidget/CartWidget'
 
-const NavBarMenu = () => {
+const Navigation = () => {
   return (
     <>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
@@ -34,7 +27,7 @@ const NavBarMenu = () => {
             </Form>
             <Navbar>
               <Nav.Link href='#cart'>
-                <AiOutlineShoppingCart className='navbar-icon' />
+                <CartWidget />
               </Nav.Link>
               <Nav.Link href='#cart'>
                 <AiOutlineUser className='navbar-icon' />
@@ -47,4 +40,4 @@ const NavBarMenu = () => {
   )
 }
 
-export default NavBarMenu
+export default Navigation
