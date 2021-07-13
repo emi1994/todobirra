@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
-        <Container>
+        <Container className='text-center'>
           <Navbar.Brand href='#home'>Todo Birra Logo</Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
@@ -25,7 +25,7 @@ const Navigation = () => {
                 aria-label='Search'
               />
             </Form>
-            <Navbar>
+            <Navbar className='justify-content-center'>
               <Nav.Link href='#cart'>
                 <CartWidget />
               </Nav.Link>
