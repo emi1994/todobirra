@@ -49,7 +49,7 @@ const Item = ({ database }) => {
       {products.map(({ id, name, description, price, image }) => (
         <>
           <Col className="m-2" key={id} sm={6} xs={12} lg={2}>
-            <Card>
+            <Card border="dark">
               <Card.Img variant="top" src={image} />
               <Card.Body>
                 <Card.Title>{name}</Card.Title>

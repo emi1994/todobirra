@@ -33,20 +33,20 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       <Container className='justify-content-center'>
         <Row>
           <Col className='col-xs-12 mt-2'>
-            <Card>
-              <Card.Body>
+
                 <Row>
-                  <Col className='col-xs-4 mt-2'>
-                    <Button onClick={() => handleIncrement()}>+</Button>
-                  </Col>
-                  <Col className='col-xs-4 mt-2'>
-                    <Card.Text>{cantidad}</Card.Text>
-                  </Col>
-                  <Col className='col-xs-4 mt-2'>
+                <Col className='mt-2' sm={4} xs={4} lg={4}>
                     <Button onClick={() => handleDecrement()}>-</Button>
                   </Col>
+
+                  <Col className='mt-2' sm={4} xs={4} lg={4}>
+                    <Card.Text>{cantidad}</Card.Text>
+                  </Col>
+                  <Col className='mt-2' sm={4} xs={4} lg={4}>
+                    <Button onClick={() => handleIncrement()}>+</Button>
+                  </Col>
                 </Row>
-                <Row fluid className='d-grid gap-2 mt-2'>
+                <Row fluid className='d-grid gap-2 m-2' sm={12} xs={12} lg={12}>
                   <Button
                     onClick={() => handleOnAdd()}
                     variant='primary'
@@ -55,8 +55,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                     Add to Cart
                   </Button>
                 </Row>
-              </Card.Body>
-            </Card>
           </Col>
         </Row>
       </Container>
