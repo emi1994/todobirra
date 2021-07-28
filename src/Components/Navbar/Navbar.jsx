@@ -3,10 +3,9 @@ import { Navbar, Container, Nav, Form, FormControl } from 'react-bootstrap'
 import { AiOutlineUser } from 'react-icons/ai'
 import './Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-const Navigation = ({ cart }) => {
-  console.log(cart)
+const Navigation = () => {
   return (
     <>
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
@@ -15,9 +14,7 @@ const Navigation = ({ cart }) => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link>
-                <Link to='/bebidas'>Ver Bebidas</Link>
-              </Nav.Link>
+              <NavLink to='/bebidas'>Ver Bebidas</NavLink>
               <Nav.Link href='#zonas'>Zonas de entrega</Nav.Link>
               <Nav.Link href='#como'>Como funciona</Nav.Link>
             </Nav>
@@ -32,7 +29,6 @@ const Navigation = ({ cart }) => {
             <Navbar className='justify-content-center'>
               <Nav.Link href='#cart'>
                 <CartWidget />
-                <span>{cart}</span>
               </Nav.Link>
               <Nav.Link href='#cart'>
                 <AiOutlineUser className='navbar-icon' />

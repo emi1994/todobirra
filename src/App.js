@@ -2,20 +2,23 @@ import './App.css'
 import Navigation from './Components/Navbar/Navbar'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer'
-import { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
-  const [cart, setCart] = useState(0)
   return (
     <>
       <Router>
-        <Navigation cart={cart} />
+        <Navigation />
         <Switch>
-          <Route path='/bebidas'>
-            <ItemListContainer cart={cart} setCart={setCart} />
+          <Route exact path='/bebidas/'>
+            <ItemListContainer />
           </Route>
-          <Route path='/item-details'>
+          <Route
+            exact
+            component={ItemListContainer}
+            path='/category/:categoryId'
+          />
+          <Route path='/details/:id'>
             <ItemDetailContainer />
           </Route>
         </Switch>

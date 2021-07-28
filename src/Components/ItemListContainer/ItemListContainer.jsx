@@ -1,13 +1,29 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import getItems from '../../services/mockItems'
+import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
-import database from '../../productsDB.json'
 
-const ItemListContainer = ({ cart, setCart }) => {
+const ItemListContainer = () => {
+  const [products, setProducts] = useState([])
+
+  const { categoryId } = useParams()
+  console.log(categoryId)
+
+  useEffect(() => {
+    getItems.then((response) => {
+      if (categoryId === undefined) {
+        setProducts(response)
+      } else {
+        setProducts(response.filter((res) => res.category === categoryId))
+      }
+    })
+  }, [categoryId])
+
   return (
     <Container fluid className='text-center'>
-      <h2>This is my ItemListContainer</h2>
-      <ItemList database={database} cart={cart} setCart={setCart} />
+      <ItemList products={products} />
     </Container>
   )
 }
